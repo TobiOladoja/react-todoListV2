@@ -25,14 +25,14 @@ class App extends Component {
 
     const newItem = {
       id: this.state.id,
-      item: this.state.item
+      title: this.state.item
     };
     console.log(newItem);
 
     const updatedItems = [...this.state.items, newItem];
     this.setState({
       items: updatedItems,
-      items: '',
+      item: '',
       id: uuid(),
       editItem: false
     });
@@ -49,7 +49,7 @@ class App extends Component {
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
             />
-            <TodoList />
+            <TodoList items={this.state.items} />
           </div>
         </div>
       </div>
