@@ -3,12 +3,9 @@ import React, { Component } from 'react';
 export default class TodoItem extends Component {
   render() {
     return (
-      <div>
-        <h1>Hello from the item</h1>
-      </div>
+      <li className='list list-group-item capitalize d-flex justify-content-between my-3'>
+        <h6>ff</h6>
+      </li>
     );
   }
 }
-
-// Going to import TodoItem to TodoList but import TodoList and TodoInput to app.js
-// because they are both visually presented on the app.js page.
