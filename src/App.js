@@ -43,12 +43,19 @@ class App extends Component {
     });
   };
 
+  // id param not e as you're deleting a specific item
   handleDelete = id => {
     const filteredItem = this.state.items.filter(item => item.id !== id);
     this.setState({
       items: filteredItem
     });
   };
+
+  // id param not e as you're editing a specific item on the list
+  handleEdit = id => {
+    console.log(id);
+  };
+
   render() {
     return (
       <div className='container'>
@@ -65,6 +72,7 @@ class App extends Component {
               items={this.state.items}
               clearList={this.clearList}
               handleDelete={this.handleDelete}
+              handleEdit={this.handleEdit}
             />
           </div>
         </div>
