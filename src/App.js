@@ -53,7 +53,17 @@ class App extends Component {
 
   // id param not e as you're editing a specific item on the list
   handleEdit = id => {
-    console.log(id);
+    const filteredItem = this.state.items.filter(item => item.id !== id);
+
+    const selectedItem = this.state.items.find(item => item.id === id);
+
+    console.log(selectedItem);
+    this.setState({
+      items: filteredItem,
+      item: selectedItem.title,
+      editItem: true,
+      id
+    });
   };
 
   render() {
@@ -67,6 +77,7 @@ class App extends Component {
               item={this.state.item}
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
+              editItem={this.state.editItem}
             />
             <TodoList
               items={this.state.items}
